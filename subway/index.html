@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>New York City Subway</title>
+
+</head>
+<style type="text/css">
+body,html{background-color:black;color:white;font-family:"Helvetica", sans-serif}.top{border-bottom:thick solid white;text-align:center}.buttons{position:relative;width:400px;height:50px;line-height:30px;text-align:center;font-weight:900;margin:15px auto 40px auto;cursor:pointer}.line-buttons{font-size:23px;border-radius:2000px;float:left;width:30px;height:30px;display:inline-block;margin:0 3px;opacity:.5}.line-buttons1{font-size:23px;border-radius:2000px;float:left;width:30px;height:30px;display:inline-block;margin:0 3px;opacity:.5}.line-buttons:hover{opacity:1}.line-buttons1:hover{opacity:1}.current-line{position:relative;width:50px;height:50px;line-height:50px;text-align:center;font-weight:900;margin:75px auto -30px auto;font-size:40px;border-radius:50px;opacity:1;color:'black';background-color:'black';display:none}@-moz-document url-prefix(){.buttons{line-height:33px}.current-line{line-height:57px}}#seven{background-color:#B933AD}#n,#q,#r{background-color:#FCCC0A;color:black}#one,#two,#three{background-color:#EE352E}#four,#five,#six{background-color:#00933C}#a,#c,#e{background-color:#2850AD}#b,#d,#f,#m{background-color:#FF6319}#j,#z{background-color:#996633}#g{background-color:#6CBE45}#l{background-color:#A7A9AC}#s42,#sFkln,#sRock{background-color:#808183}#best-fit-button,#all-trains-button,#map-button{cursor:pointer;display:none}.myButton{-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;box-shadow:inset 0px 1px 0px 0px #ffffff;background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fff), color-stop(1, #f6f6f6));background:-moz-linear-gradient(top, #fff 5%, #f6f6f6 100%);background:-webkit-linear-gradient(top, #fff 5%, #f6f6f6 100%);background:-o-linear-gradient(top, #fff 5%, #f6f6f6 100%);background:-ms-linear-gradient(top, #fff 5%, #f6f6f6 100%);background:linear-gradient(to bottom, #fff 5%, #f6f6f6 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);background-color:#ffffff;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius:6px;border:1px solid #dcdcdc;display:inline-block;color:#000000;font-family:Helvetica;font-size:15px;font-weight:bold;padding:6px;text-decoration:none;text-shadow:0px 1px 0px #ffffff;margin-top:10px}.myButton:hover{background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #fff));background:-moz-linear-gradient(top, #f6f6f6 5%, #fff 100%);background:-webkit-linear-gradient(top, #f6f6f6 5%, #fff 100%);background:-o-linear-gradient(top, #f6f6f6 5%, #fff 100%);background:-ms-linear-gradient(top, #f6f6f6 5%, #fff 100%);background:linear-gradient(to bottom, #f6f6f6 5%, #fff 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);background-color:#f6f6f6}.myButton:active{position:relative;top:1px}#tooltip{z-index:1;color:black;position:absolute;width:auto;height:auto;padding:10px;background-color:white;border-radius:10px;pointer-events:none}#tooltip.hidden{display:none}#tooltip p{margin:0;font-family:Helvetica, sans-serif;font-size:10px;line-height:20px}.the-graph{margin-top:0;margin-bottom:0;margin-left:auto;margin-right:auto}.svg-chart{position:relative;width:900px;margin:0 auto;display:none}#hidden{display:none}.description{margin-top:75px;border-top:thick solid white;display:none}.description p{padding-top:25px;padding-bottom:25px;width:850px;margin:0 auto;text-align:justify}#attribution{float:left}#attribution-link{color:white}.container{background-image:url(http://s3.amazonaws.com/subway_ga_app/man.svg);background-repeat:no-repeat;position:relative;width:400px;height:500px;margin:0 auto;background-color:steelblue;border-radius:10px}.axis path,.axis line{fill:none;stroke:white;shape-rendering:crispEdges}.axis text{font-size:11px;fill:white}
+
+.line-buttons a:link {text-decoration:none;color:white;}
+.line-buttons a:visited {text-decoration:none;color:white;}
+.line-buttons a:hover {text-decoration:none;}
+.line-buttons a:active {text-decoration:none;}
+
+.line-buttons1 a:link {text-decoration:none;color:black;}
+.line-buttons1 a:visited {text-decoration:none;color:black;}
+.line-buttons1 a:hover {text-decoration:none;}
+.line-buttons1 a:active {text-decoration:none;}
+
+</style>
+<body>
+
+	<div class="top">
+    <h1>Are your subway trains on time?</h1>
+  </div>
+  <div class="buttons">
+    <div class="line-buttons" id="one"><a href="1trainlinechart.html">1</a></div>
+    <div class="line-buttons" id="two"><a href="2trainlinechart.html">2</a></div>
+    <div class="line-buttons" id="three">3</div>
+    <div class="line-buttons" id="four">4</div>
+    <div class="line-buttons" id="five">5</div>
+    <div class="line-buttons" id="six"><a href="6trainlinechart.html">6</a></div>
+    <div class="line-buttons" id="seven">7</div>
+    <div class="line-buttons" id="a"><a href="Atrainlinechart.html">A</a></div>
+    <div class="line-buttons" id="c">C</div>
+    <div class="line-buttons" id="e">E</div>
+    <div class="line-buttons" id="g">G</div>
+    <div class="line-buttons" id="b"><a href="Btrainlinechart.html">B</a></div>
+    <div class="line-buttons" id="d">D</div>
+    <div class="line-buttons" id="f">F</div>
+    <div class="line-buttons" id="m">M</div>
+    <div class="line-buttons1" id="n"><a href="Ntrainlinechart.html">N</a></div>
+    <div class="line-buttons" id="q">Q</div>
+    <div class="line-buttons" id="r">R</div>
+    <div class="line-buttons1" id="j"><a href="Jtrainlinechart.html">J</a></div>
+    <div class="line-buttons" id="z">Z</div>
+    <div class="line-buttons" id="l">L</div>
+    <IFRAME src="waitingtime.html" align="center" border="0" frameborder="0" width=1200px height=600px style="margin-left:-350px" ></iframe>
+</body>
+</html>

@@ -1,0 +1,73 @@
+﻿<html>
+  <head>
+    <style>
+    body{
+      background-color: black;
+    }
+    img{
+      margin-top: 10px;
+      margin-left: 50px;
+      margin-bottom:0px;
+      width: 5%;
+    }
+    </style>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+     var data = google.visualization.arrayToDataTable([    ['Date in October, 2013', 'On-time Trains (%)'],
+          [1,  99],
+          [2,  63],
+          [3,  66],
+          [4, 67],
+          [5, 33],
+          [6, 49],
+          [7, 77],
+          [8, 57],
+          [9, 96],
+          [10, 83],
+          [11, 91],
+          [12, 58],
+          [13, 41],
+          [14, 98],
+          [15, 81],
+          [16, 89],
+          [17, 81],
+          [18, 82],
+          [19, 38],
+          [20, 59],
+          [21, 91],
+          [22, 70],
+          [23, 100],
+          [24, 98],
+          [25, 67],
+          [26, 29],
+          [27, 96],
+          [28, 83],
+          [29, 54],
+          [30, 77],
+          [31, 80],
+        ]);
+
+        var options = {
+   lineWidth:5,       colors:['#f16500'],       title: '',
+  backgroundColor:{fill:['black']},        hAxis: {titleTextStyle:{color:'white'},textStyle:{color:'white'},baselineColor:['white'],ticks:[5,10,15,20,25,30],
+ title: 'Date in October, 2013'},
+          vAxis: {titleTextStyle:{color:'white'},textStyle:{color:'white'},baselineColor:['white'],title: 'On-time Trains (%)', minValue: 0, maxValue: 100},
+          legend: 'none'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <style>
+    backgroundColor: 'black'
+    </style>
+    <img src="http://www.mta.info/siteimages/subwaybullets/36px/B.png">
+    <div id="chart_div" style="width: 100%; height: 85%;"></div>
+  </body>
+</html>​
