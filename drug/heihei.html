@@ -58,16 +58,6 @@ h1 {
 .total{
 	font-family: georgia, sans;
 	font-size:1.2em;
-	padding-left: 600px;
-	width:200px;
-}
-
-.milligrams{
-	font-family: georgia, sans;
-	font-size:1.2em;
-	padding-left: 600px;
-	width:200px;
-	padding-top: 50px;
 }
 
 .low{
@@ -76,14 +66,6 @@ h1 {
 
 .mid, .high{
 	font-size: 0.7em;
-}
-
-.condition{
-	padding-top: 50px;
-}
-
-.opening{
-	padding-top: 30px;
 }
 
 
@@ -175,12 +157,14 @@ h1 {
 
 </div>
 
+<div class="total">
+	Current Total is
+	<div class="sum"></div>
+	<div class="low">milligrams</div>
+	<div class="mid">You've exceeded the FDA's recommended maximum daily limit of acetaminophen.</div>
+	<div class="high">You've exceeded the level at which liver damage can occur if taken for several days, according to McNeil, the maker of Tylenol.</div>
+</div>
 
-<div class="opening">Click on a drug to see its daily limit of acetaminophen</div>
-<div class="total"></div>
-<div class="sum"></div>
-<div class="milligrams"></div>
-<div class="condition"></div>
 
 
 
@@ -211,34 +195,29 @@ $(".drug-box").click(function(){
 	$("this").data('clicked', true);
 });
 
-
+if ($(".drug-box").data('clicked')){
+}
+else{
+	$(".mid").hide();
+	$(".high").show();
+}
 
 
 if(currentTotal > 10000){
 	$(".sum").css("color", "red");
-	$(".condition").text("You've exceeded the level at which liver damage can occur if taken for several days, according to McNeil, the maker of Tylenol.");
-	$(".condition").css("color","black");
-	$(".opening").hide();
-	$(".total").text("The current total is");
-	$(".milligrams").text("milligrams");
-	
+	$(".mid").hide();
+	$(".high").show();
 }
 if((currentTotal <= 10000) && (currentTotal > 4000)){
 	$(".sum").css("color", "#d17828");
-	$(".condition").text("You've exceeded the FDA's recommended maximum daily limit of acetaminophen.");
-	$(".condition").css("color","black");
-	$(".opening").hide();
-	$(".total").text("The current total is");
-	$(".milligrams").text("milligrams");
+	$(".high").hide();
+	$(".mid").show();
 }
 if(currentTotal <= 4000){
 	$(".sum").css("color", "#d5b612");
-	$(".condition").css("color","black");
-	$(".opening").hide();
-	$(".total").text("The current total is");
-	$(".milligrams").text("milligrams");
+	$(".mid").hide();
+	$(".high").hide();
 }
-
 
 
 });
