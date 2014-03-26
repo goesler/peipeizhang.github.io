@@ -65,6 +65,10 @@ img.drug-box{
 	
 }
 
+.barbox{
+	background-color: #444444;
+}
+
 .sum{
 	position:absolute;
 	padding-top:0px;
@@ -115,6 +119,7 @@ img.drug-box{
 	background:#444444;
 	z-index: 3;
 	opacity: 2;
+}
 
 
 </style>
@@ -207,7 +212,6 @@ img.drug-box{
 <span>
 	<div class="barbox">
 		<div class="bar"></div></div>
-	<div class="dosebar"></div>
 
 </span>
 
@@ -284,7 +288,7 @@ if(currentTotal <= 4000){
 <script>
 
 var currentTotal = 0;
-var barHeight = 0;
+var barHeight = 430;
 
 $(".drug-box").click(function(){
 	console.log(this.id);
@@ -298,15 +302,15 @@ var thisNum = $(this).data("num");
 $(this).toggleClass("selected");
 	if($(this).hasClass("selected")){
 		currentTotal = currentTotal + thisNum
-		barHeight = currentTotal*430/15000 + 'px';
+		barHeight = 430 - currentTotal*430/15000 + 'px';
 	}
 	else{
 		currentTotal = currentTotal - thisNum;
-		barHeight = barHeight*430/15000 + 'px';
+		barHeight = 430 - barHeight*430/15000 + 'px';
 	};
 $(".sum").html(currentTotal);
 $(".bar").css("height", barHeight);
-$(".bar").css("color", "red");
+$(".bar").css("background", "white");
 console.log("currentTotal is", currentTotal);
 
 
