@@ -233,26 +233,37 @@ img.drug-box{
 
 
 
-<!-- <script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+
+
+
+ <script type="text/javascript" src="jquery-1.11.0.min.js"></script>
 <script>
 
 var currentTotal = 0;
+var barHeight = 430;
 
 $(".drug-box").click(function(){
 	console.log(this.id);
 	console.log($(this).data("num"));
 
+
+
 var thisNum = $(this).data("num");
+
 
 $(this).toggleClass("selected");
 	if($(this).hasClass("selected")){
 		currentTotal = currentTotal + thisNum
-		$(".drug-box").addClass("overlay");
+		barHeight = 430 - currentTotal*430/10000 + 'px';
 	}
 	else{
 		currentTotal = currentTotal - thisNum;
+		barHeight = 430 - currentTotal*430/10000 + 'px';
 	};
 $(".sum").html(currentTotal);
+$(".bar").css("height", barHeight);
+$(".bar").css("background", "white");
+$(".barbox").css("background", "#444444");
 console.log("currentTotal is", currentTotal);
 
 
@@ -282,80 +293,6 @@ if(currentTotal <= 4000){
 	$(".milligrams").text("milligrams");
 }
 
-
-
-});
-
-</script>
-
-
-
- -->
- <script type="text/javascript" src="jquery-1.11.0.min.js"></script>
-<script>
-
-var currentTotal = 0;
-var barHeight = 430;
-
-$(".drug-box").click(function(){
-	console.log(this.id);
-	console.log($(this).data("num"));
-
-
-
-var thisNum = $(this).data("num");
-
-
-$(this).toggleClass("selected");
-	if($(this).hasClass("selected")){
-		currentTotal = currentTotal + thisNum
-		barHeight = 430 - currentTotal*430/15000 + 'px';
-	}
-	else{
-		currentTotal = currentTotal - thisNum;
-		barHeight = 430 - currentTotal*430/15000 + 'px';
-	};
-$(".sum").html(currentTotal);
-$(".bar").css("height", barHeight);
-$(".bar").css("background", "white");
-$(".barbox").css("background", "#444444");
-console.log("currentTotal is", currentTotal);
-
-
-
-if((currentTotal > 10000 && (currentTotal) <= 15000)){
-	$(".sum").css("color", "red");
-	$(".condition").text("You've exceeded the level at which liver damage can occur if taken for several days, according to McNeil, the maker of Tylenol.");
-	$(".condition").css("color","black");
-	$(".opening").hide();
-	$(".total").text("The current total is");
-	$(".milligrams").text("milligrams");
-	
-}
-if((currentTotal <= 10000) && (currentTotal > 4000)){
-	$(".sum").css("color", "#d17828");
-	$(".condition").text("You've exceeded the FDA's recommended maximum daily limit of acetaminophen.");
-	$(".condition").css("color","black");
-	$(".opening").hide();
-	$(".total").text("The current total is");
-	$(".milligrams").text("milligrams");
-}
-if(currentTotal <= 4000){
-	$(".sum").css("color", "#d5b612");
-	$(".condition").css("color","black");
-	$(".opening").hide();
-	$(".total").text("The current total is");
-	$(".milligrams").text("milligrams");
-}
-if (currentTotal > 15000){
-	$(".sum").css("color", "red");
-	$(".sum").text("15000 +");
-	$(".condition").css("color","black");
-	$(".opening").hide();
-	$(".total").text("The current total is");
-	$(".milligrams").text("milligrams");
-
-}
 
 $(this).css("height",newHeight);
 
