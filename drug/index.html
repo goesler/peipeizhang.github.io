@@ -71,7 +71,7 @@ img.drug-box{
 .sum{
 	position:absolute;
 	padding-top:15px;
-	left: 950px;
+	left: 75%;
 	font-size: 2em;
 
 
@@ -95,7 +95,7 @@ img.drug-box{
 	position: absolute;
 	font-family: georgia, sans;
 	font-size:1.2em;
-	left: 950px;
+	left: 75%;
 	width:200px;
 	padding-top: 50px;
 }
@@ -111,13 +111,13 @@ img.drug-box{
 .condition{
 	position: absolute;
 	padding-top: 90px;
-	left:950px;
+	left:75%;
 	width: 150px;
 }
 
 .opening{
 	position: absolute;
-	left:950px;
+	left:75%;
 	padding-top: 30px;
 	width:150px;
 }
@@ -323,7 +323,7 @@ console.log("currentTotal is", currentTotal);
 
 
 
-if(currentTotal > 10000){
+if((currentTotal > 10000 && (currentTotal) <= 15000)){
 	$(".sum").css("color", "red");
 	$(".condition").text("You've exceeded the level at which liver damage can occur if taken for several days, according to McNeil, the maker of Tylenol.");
 	$(".condition").css("color","black");
@@ -346,6 +346,15 @@ if(currentTotal <= 4000){
 	$(".opening").hide();
 	$(".total").text("The current total is");
 	$(".milligrams").text("milligrams");
+}
+if (currentTotal > 15000){
+	$(".sum").css("color", "red");
+	$(".sum").text("15000 +");
+	$(".condition").css("color","black");
+	$(".opening").hide();
+	$(".total").text("The current total is");
+	$(".milligrams").text("milligrams");
+
 }
 
 $(this).css("height",newHeight);
