@@ -254,11 +254,11 @@ var thisNum = $(this).data("num");
 $(this).toggleClass("selected");
 	if($(this).hasClass("selected")){
 		currentTotal = currentTotal + thisNum
-		barHeight = 430 - currentTotal*430/10000 + 'px';
+		barHeight = 430 - currentTotal*430/15000 + 'px';
 	}
 	else{
 		currentTotal = currentTotal - thisNum;
-		barHeight = 430 - currentTotal*430/10000 + 'px';
+		barHeight = 430 - currentTotal*430/15000 + 'px';
 	};
 $(".sum").html(currentTotal);
 $(".bar").css("height", barHeight);
@@ -268,8 +268,8 @@ console.log("currentTotal is", currentTotal);
 
 
 
-if(currentTotal > 10000){
-	$(".sum").css("color", "red");
+if((currentTotal <= 15000) && (currentTotal > 8000)){
+	$(".sum").css("color", "#d17828");
 	$(".condition").text("You've exceeded the level at which liver damage can occur if taken for several days, according to McNeil, the maker of Tylenol.");
 	$(".condition").css("color","black");
 	$(".opening").hide();
@@ -277,8 +277,8 @@ if(currentTotal > 10000){
 	$(".milligrams").text("milligrams");
 	
 }
-if((currentTotal <= 10000) && (currentTotal > 4000)){
-	$(".sum").css("color", "#d17828");
+if((currentTotal <= 8000) && (currentTotal > 4000)){
+	$(".sum").css("color", "#d5b612");
 	$(".condition").text("You've exceeded the FDA's recommended maximum daily limit of acetaminophen.");
 	$(".condition").css("color","black");
 	$(".opening").hide();
@@ -286,13 +286,21 @@ if((currentTotal <= 10000) && (currentTotal > 4000)){
 	$(".milligrams").text("milligrams");
 }
 if(currentTotal <= 4000){
-	$(".sum").css("color", "#d5b612");
+	$(".sum").css("color", "black");
 	$(".condition").css("color","black");
 	$(".opening").hide();
 	$(".total").text("The current total is");
 	$(".milligrams").text("milligrams");
 }
 
+if(currentTotal > 15000){
+	$(".sum").css("color", "#c20803");
+	$(".condition").text("You've exceeded the level at which liver damage can occur if taken for several days, according to McNeil, the maker of Tylenol.");
+	$(".condition").css("color","black");
+	$(".opening").hide();
+	$(".total").text("The current total is");
+	$(".milligrams").text("milligrams");
+}
 
 $(this).css("height",newHeight);
 
