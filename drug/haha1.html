@@ -57,7 +57,6 @@ img.drug-box{
 	display: block;
 }
 .barbox .bar{
-	height: 10px;
 	background:#444444;
 	z-index: 3;
 	opacity: 2;
@@ -66,7 +65,7 @@ img.drug-box{
 }
 
 .barbox{
-	background-color: #444444;
+	background-color: transparent;
 }
 
 .sum{
@@ -306,11 +305,12 @@ $(this).toggleClass("selected");
 	}
 	else{
 		currentTotal = currentTotal - thisNum;
-		barHeight = 430 - barHeight*430/15000 + 'px';
+		barHeight = 430 - currentTotal*430/15000 + 'px';
 	};
 $(".sum").html(currentTotal);
 $(".bar").css("height", barHeight);
 $(".bar").css("background", "white");
+$(".barbox").css("background", "#444444");
 console.log("currentTotal is", currentTotal);
 
 
