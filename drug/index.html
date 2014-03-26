@@ -275,6 +275,7 @@ if((currentTotal <= 15000) && (currentTotal > 8000)){
 	$(".opening").hide();
 	$(".total").text("The current total is");
 	$(".milligrams").text("milligrams");
+	$(".barbox").css("background", "#d17828");
 	
 }
 if((currentTotal <= 8000) && (currentTotal > 4000)){
@@ -284,6 +285,7 @@ if((currentTotal <= 8000) && (currentTotal > 4000)){
 	$(".opening").hide();
 	$(".total").text("The current total is");
 	$(".milligrams").text("milligrams");
+	$(".barbox").css("background", "#d5b612");
 }
 if(currentTotal <= 4000){
 	$(".sum").css("color", "black");
@@ -291,6 +293,7 @@ if(currentTotal <= 4000){
 	$(".opening").hide();
 	$(".total").text("The current total is");
 	$(".milligrams").text("milligrams");
+	$(".barbox").css("background", "black");
 }
 
 if(currentTotal > 15000){
@@ -300,6 +303,7 @@ if(currentTotal > 15000){
 	$(".opening").hide();
 	$(".total").text("The current total is");
 	$(".milligrams").text("milligrams");
+	$(".barbox").css("background", "#c20803");
 }
 
 $(this).css("height",newHeight);
