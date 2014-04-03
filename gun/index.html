@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<style>
+<link href='http://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'></link>
+
+
+.counties {
+  fill: none;
+}
+
+.states {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+
+.q0-9 { fill:rgb(247,251,255); }
+.q1-9 { fill:rgb(222,235,247); }
+.q2-9 { fill:rgb(198,219,239); }
+.q3-9 { fill:rgb(158,202,225); }
+.q4-9 { fill:rgb(107,174,214); }
+.q5-9 { fill:rgb(66,146,198); }
+.q6-9 { fill:rgb(33,113,181); }
+.q7-9 { fill:rgb(8,81,156); }
+.q8-9 { fill:rgb(8,48,107); }
+
+#stategun{
+  -webkit-column-count:3; /* Chrome, Safari, Opera */
+-moz-column-count:3; /* Firefox */
+column-count:3;
+padding-top: 30px;
+}
+
+#title{
+  font-size: 1.1em;
+}
+
+td{
+  text-align: center
+}
+
+#mississippi{
+  background-color:#bcbddc; 
+}
+#big{
+  width:800px;
+  font-size: 2em;
+  font-family: Cinzel;
+}
+#p{
+  font-size:2em;
+  opacity:0.8;
+  font-family: Cinzel;
+}
+
+</style>
+</head>
+
+<body>
+  <div id="big">
+    Chicago Guns Map
+  </div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script>
+
+var width = 960,
+    height = 600;
+
+var rateById = d3.map();
+
+
+
+mycolor = d3.scale.threshold()
+    .domain([1, 10, 50, 100, 200, 300, 900])
+    .range(["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#807dba", "#6a51a3", "#3f007d"]);
+
+
+var projection = d3.geo.albersUsa()
+    .scale(1280)
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+queue()
+    .defer(d3.json, "/us.json")
+    .defer(d3.tsv, "unemployment.tsv", function(d) { rateById.set(d.id, +d.rate); })
+    .await(ready);
+
+function ready(error, us) {
+  svg.append("g")
+      .attr("class", "counties")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.counties).features)
+    .enter().append("path")
+      .style("fill", function(d){return mycolor(rateById.get(d.id))})
+      .attr("d", path);
+
+svg.selectAll("path")
+ .data(topojson.feature(us, us.objects.counties).features)
+ .append("svg:title")
+ // .attr("class", function(d) { return "path " + d.id; })
+ .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+ .attr("dy", ".35em")
+ .text(function(d) { return "Number of guns: " + rateById.get(d.id); });
+
+  svg.append("path")
+      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+      .attr("class", "states")
+      .attr("d", path);
+}
+
+d3.select(self.frameElement).style("height", height + "px");
+
+</script>
+
+<br><br>
+
+<div id="p">
+Number of Guns by State
+</div>
+
+<div id="stategun">
+<table style="stategun" >
+<tr>
+  <td>Illinois</td>
+  <td>22051</td>
+</tr>
+<tr>
+  <td>Indiana</td>
+  <td>7747</td>
+</tr>
+<tr id="mississippi">
+  <td>Mississippi</td>
+  <td>4296</td>
+</tr>
+<tr>
+  <td>Wisconsin</td>
+  <td>1647</td>
+</tr>
+<tr>
+  <td>Kentucky</td>
+  <td>1226</td>
+</tr>
+<tr>
+  <td>Ohio</td>
+  <td>1121</td>
+</tr>
+<tr>
+  <td>Tennessee</td>
+  <td>1090</td>
+</tr>
+<tr>
+  <td>Alabama</td>
+  <td>1070</td>
+</tr>
+<tr>
+  <td>Arkansas</td>
+  <td>944</td>
+</tr>
+<tr>
+  <td>Texas</td>
+  <td>937</td>
+</tr>
+<tr>
+  <td>Georgia</td>
+  <td>933</td>
+</tr>
+<tr>
+  <td>Michigan</td>
+  <td>679</td>
+</tr>
+<tr>
+  <td>Florida</td>
+  <td>673</td>
+</tr>
+<tr>
+  <td>Louisiana</td>
+  <td>529</td>
+</tr>
+<tr>
+  <td>California</td>
+  <td>526</td>
+</tr>
+<tr>
+  <td>Minnesota</td>
+  <td>474</td>
+</tr>
+<tr>
+  <td>Iowa</td>
+  <td>397</td>
+</tr>
+<tr>
+  <td>Arizona</td>
+  <td>355</td>
+</tr>
+<tr>
+  <td>Missouri</td>
+  <td>344</td>
+</tr>
+<tr>
+  <td>North Carolina</td>
+  <td>295</td>
+</tr>
+<tr>
+  <td>Virginia</td>
+  <td>269</td>
+</tr>
+<tr>
+  <td>Oklahoma</td>
+  <td>207</td>
+</tr>
+<tr>
+  <td>West Virginia</td>
+  <td>202</td>
+</tr>
+<tr>
+  <td>Colorado</td>
+  <td>187</td>
+</tr>
+<tr>
+  <td>Pennsylvania</td>
+  <td>181</td>
+</tr>
+<tr>
+  <td>Kansas</td>
+  <td>177</td>
+</tr>
+<tr>
+  <td>Washington</td>
+  <td>156</td>
+</tr>
+<tr>
+  <td>South Carolina</td>
+  <td>152</td>
+</tr>
+<tr>
+  <td>Massachusetts</td>
+  <td>108</td>
+</tr>
+<tr>
+  <td>Nebraska</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>Nevada</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>New York</td>
+  <td>97</td>
+</tr>
+<tr>
+  <td>New Mexico</td>
+  <td>75</td>
+</tr>
+<tr>
+  <td>Montana</td>
+  <td>53</td>
+</tr>
+<tr>
+  <td>Utah</td>
+  <td>53</td>
+</tr>
+<tr>
+  <td>Maryland</td>
+  <td>50</td>
+</tr>
+<tr>
+  <td>Connecticut</td>
+  <td>46</td>
+</tr>
+<tr>
+  <td>Oregon</td>
+  <td>40</td>
+</tr>
+<tr>
+  <td>Idaho</td>
+  <td>39</td>
+</tr>
+</table>
+</div>
+</body>
