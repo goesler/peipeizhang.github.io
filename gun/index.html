@@ -5,9 +5,7 @@
 @import url(http://fonts.googleapis.com/css?family=Cinzel);
 
 
-.counties {
-  fill: none;
-}
+
 
 .states {
   fill: none;
@@ -26,10 +24,10 @@
 .q8-9 { fill:rgb(8,48,107); }
 
 #stategun{
-  -webkit-column-count:3; /* Chrome, Safari, Opera */
--moz-column-count:3; /* Firefox */
-column-count:3;
-padding-top: 30px;
+  -webkit-column-count:4; /* Chrome, Safari, Opera */
+-moz-column-count:4; /* Firefox */
+column-count:4;
+padding-top: 10px;
 }
 
 #title{
@@ -53,6 +51,16 @@ td{
   opacity:0.8;
   font-family: Cinzel;
 }
+
+#map{
+  text-align: center;
+}
+
+.class{
+  background-color: red;
+  font-size: 50px;
+}
+
 
 
 </style>
@@ -91,6 +99,15 @@ var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
+
+var text = svg.selectAll("path")
+              .data(topojson.feature(us, us.objects.counties).features)
+              .append("svg:title");
+
+var textLabels = text
+                .text(function(d) { return "Number of Guns: " + rateById.get(d.id)
+                .attr("fill", "red");
+
 queue()
     .defer(d3.json, "us.json")
     .defer(d3.tsv, "unemployment.tsv", function(d) { rateById.set(d.id, +d.rate); })
@@ -110,8 +127,9 @@ svg.selectAll("path")
  .append("svg:title")
  // .attr("class", function(d) { return "path " + d.id; })
  .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
- .attr("dy", ".35em")
- .text(function(d) { return "Number of guns: " + rateById.get(d.id); });
+ .attr("dy", ".5em")
+ .text(function(d) { return "Number of Guns: " + rateById.get(d.id); })
+
 
   svg.append("path")
       .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
@@ -286,6 +304,58 @@ Number of Guns by State
 <tr>
   <td>Idaho</td>
   <td>39</td>
+</tr>
+<tr>
+  <td>South Dakota</td>
+  <td>36</td>
+</tr>
+<tr>
+  <td>Alaska</td>
+  <td>33</td>
+</tr>
+<tr>
+  <td>North Dakota</td>
+  <td>31</td>
+</tr>
+<tr>
+  <td>Wyoming</td>
+  <td>29</td>
+</tr>
+<tr>
+  <td>Wyoming</td>
+  <td>29</td>
+</tr>
+<tr>
+  <td>New Jersey</td>
+  <td>21</td>
+</tr>
+<tr>
+  <td>Maine</td>
+  <td>18</td>
+</tr>
+<tr>
+  <td>New Hampshire</td>
+  <td>14</td>
+</tr>
+<tr>
+  <td>Delaware</td>
+  <td>10</td>
+</tr>
+<tr>
+  <td>Hawaii</td>
+  <td>8</td>
+</tr>
+<tr>
+  <td>Rhode Island</td>
+  <td>5</td>
+</tr>
+<tr>
+  <td>Vermont</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>District of Columbia</td>
+  <td>2</td>
 </tr>
 </table>
 </div>
