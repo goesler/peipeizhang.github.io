@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+/*rect:hover {
+  opacity:.8;
+}*/
+.x.axis path {
+  display: none;
+}
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  /*background: rgba(0, 0, 0, 0.6);*/
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+/*.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}*/
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+/*.selected{
+  opacity: 1;
+}*/
+
+/*css 2*/
+button {
+    background-color: #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:6px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+}
+
+
+
+button:hover {
+    border: none;
+    background:red;
+    box-shadow: 0px 0px 1px #777;
+}
+
+body {
+  font: 10px arial;
+  width:800px;
+  margin:auto;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar2 {
+  fill: steelblue;
+}
+.axis{
+  width: 50px;
+  background-color: #ffffff;
+  color:#000;
+
+}
+.x.axis path {
+  display: none;
+}
+
+p{
+  padding-left: 15%;
+  padding-right: 20%;
+  font-size:1.5em;
+  width:600px;
+
+}
+
+h1{
+  font-family: garamond;
+  font-size: 2.5em;
+  opacity: 0.8;
+  text-align: center;
+  color: #003b69;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  /*background: rgba(0, 0, 0, 0.6);
+  color: #fff;*/
+  border-radius: 2px;
+  padding-left: 10px;
+}
+
+#button2010{
+
+  float: left;
+  width:43px;
+}
+
+#button2011{
+/*  margin-left: 3px;*/
+  float: left;
+  width:43px;
+}
+
+#button2012{
+/*  margin-left: 5px;*/
+  float: left;
+  width:43px;
+}
+
+#button2013{
+/*  margin-left: 5px;*/
+  float: left;
+  width:43px;
+}
+
+#button2014{
+/*  margin-left: 5px;*/
+  float: left;
+  width:43px;
+}
+
+
+ #button2010-2014{
+/*  margin-left: 5px;*/
+  float: left;
+  width:100px;
+}
+
+.buttons{
+  padding-left:60%;
+}
+
+h3{
+  float: right;
+}
+
+
+</style>
+<body>
+  <h1> More Than 50% Permanent Employment certifications go to Indian</h1>
+
+  <h3> By Peipei Zhang</h3>
+  <br><br>  <br><br>  <br><br>
+  <div id="first"></div>
+<p>　　The Department of Labor (DOL) issued its statistics for the second quarter of fiscal year 2014 for the Permanent Labor Certification Program (Perm program). 17,129 cases were certified. Still, 55.5% of the certified cases go to India followed by China, which only makes up 8%.<br><br>
+ 
+　　In the past four years, more than half of the certifications go to India. The percentage reached its peak at 59.5% in fiscal year 2013. From 2010 to 2014, while the percentage of other big source countries remain the same or decrease, the percentage of India keeps going up as we can see in the chart 1. <br><br>
+
+　　A permanent labor certification allows an employer to hire a foreign worker who can work permanently in the US. In most cases, a holder of Permanent Labor Certification ends up in EB-2 or EB-3 visa which are both categories of employment-based permanent residency for skilled workers. <br><br>
+
+　　Vidya Parwani, a immigration lawyer who has been practicing immigration law for 7 years, said that the industry which requires most qualified workers is the science industry, IT and related fields. And Indian people have a higher interest in the field than people in the US. There are different kinds of jobs in the IT field” Vidya said, ”as far as I know, Indian are doing good in all of them. ”<br><br>
+
+　　Being of Indian origin, Vidya has dealt with many Perm program applications from India. Engineering, computer science, management information system are the most common fields the applications fall into. “Indian people have a higher interest in the field than people in the US”. Vidya said. She also introduced that in India, people do science after graduation from high school are considered prestigious. The middle is commerce. The last is Bachelor of Arts. As a result, kids in India are driven to the science fields. However, in the US people are more open-minded and value more on Arts fields. <br><br>
+
+　　That may also explain the fact that few Arts students could get permanent labor certification. “Because only when employers can not find US qualified workers, they are hiring people from other countries.” Vidya explains.<br><br></p>
+
+  <div class="buttons">
+    <div id="button2010"> 
+  <button type="button">2010</button>
+  </div>
+  <div id="button2011"> 
+  <button type="button">2011</button>
+  </div>
+  <div id="button2012"> 
+  <button type="button">2012</button>
+  </div>
+  <div id="button2013"> 
+  <button type="button">2013</button>
+  </div>
+  <div id="button2014"> 
+  <button type="button">2014</button>
+  </div>
+  <div id="button2010-2014"> 
+  <button type="button">2010-2014</button>
+  </div>
+</div>
+  <div id="second"></div>
+  
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.svg.js"></script> 
+<script type="text/javascript" src="jquery.svganim.js"></script> 
+<script>
+
+//bar chart
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 800 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+var x0 = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var x1 = d3.scale.ordinal();
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var color = d3.scale.ordinal()
+    .range(["#824c31","#a05d56","#6b486b","#7b6888","#8a89a6","#98abc5",]);
+
+var xAxis = d3.svg.axis()
+    .scale(x0)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .tickFormat(d3.format(".2s"));
+
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([10, 10])
+  .html(function(d) {
+    return  "<span style='color: #9B843E; font-family: helvetica' >" + d.name + ": " + d.value+"%" +"</span>";
+  })
+
+var svg = d3.select("#first").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+svg.call(tip);
+
+d3.csv("databar.csv", function(error, data) {
+  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
+
+  data.forEach(function(d) {
+    d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
+  });
+
+  x0.domain(data.map(function(d) { return d.State; }));
+  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Percentage (%)");
+
+  var state = svg.selectAll(".state")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "g")
+      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
+
+
+  
+
+  state.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+      // .attr("id", function(d) { return d.value; })
+      .attr("class", function(d) { return d.name; })
+      .attr("width", x1.rangeBand())
+      .attr("x", function(d) { return x1(d.name); })
+      .attr("y", function(d) { return y(d.value); })
+      .attr("height", function(d) { return height - y(d.value); })
+      .style("fill", function(d) { return color(d.name); })
+      // .on('mouseover', tip.show)
+      // .on('mouseout', tip.hide)
+
+  var legend = svg.selectAll(".legend")
+      .data(ageNames.slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("class", function(d) { return d.name; })
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("class", function(d) { return d.name; })
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+
+// this function will be run everytime we mouse over an element
+      var myMouseoverFunctionindia = function() {
+        // remember how d3 goes through EACH of the selected elements and uses your function for EACH element?
+        // well, everytime the function is used for an element, it has a "secret" variable called 'this' which holds that element.
+        // we use 'this' to increment the current element's radius by 10
+        var circle = d3.select(this);
+        state.selectAll("rect").style("opacity", .2)
+        .data(function(d) { return d.ages; })
+
+        state.selectAll(".India").style("opacity", 1)
+        d3.selectAll(".legend").style("opacity", 1)
+
+      }
+
+      var myMouseoutrFunction = function() {
+        // remember how d3 goes through EACH of the selected elements and uses your function for EACH element?
+        // well, everytime the function is used for an element, it has a "secret" variable called 'this' which holds that element.
+        // we use 'this' to increment the current element's radius by 10
+        d3.selectAll("rect").style("opacity", 1)
+      }
+
+      state.select(".India")
+      .on('mouseover', function(d, i) {
+  tip.show(d, i);
+  myMouseoverFunctionindia(d, i);
+})
+      // .on('mouseout',myMouseoutrFunction)
+      .on('mouseout', function(d, i) {
+  tip.hide(d, i);
+  myMouseoutrFunction(d, i);
+})
+
+
+// this function will be run everytime we mouse over an element
+      var myMouseoverFunctionchina = function() {
+        // remember how d3 goes through EACH of the selected elements and uses your function for EACH element?
+        // well, everytime the function is used for an element, it has a "secret" variable called 'this' which holds that element.
+        // we use 'this' to increment the current element's radius by 10
+        var circle = d3.select(this);
+        d3.selectAll("rect").style("opacity", .2)
+        d3.selectAll(".China").style("opacity", 1)
+        d3.selectAll(".legend").style("opacity", 1)
+        
+      }
+
+      state.select(".China")
+      .on('mouseover', function(d, i) {
+  tip.show(d, i);
+  myMouseoverFunctionchina(d, i);
+})
+      // .on('mouseout',myMouseoutrFunction)
+      .on('mouseout', function(d, i) {
+  tip.hide(d, i);
+  myMouseoutrFunction(d, i);
+})
+
+// this function will be run everytime we mouse over an element
+      var myMouseoverFunctioncanada = function() {
+        // remember how d3 goes through EACH of the selected elements and uses your function for EACH element?
+        // well, everytime the function is used for an element, it has a "secret" variable called 'this' which holds that element.
+        // we use 'this' to increment the current element's radius by 10
+        var circle = d3.select(this);
+        d3.selectAll("rect").style("opacity", .2)
+        d3.selectAll(".Canada").style("opacity", 1)
+        d3.selectAll(".legend").style("opacity", 1)
+
+        
+      }
+
+      state.select(".Canada")
+      .on('mouseover', function(d, i) {
+  tip.show(d, i);
+  myMouseoverFunctioncanada(d, i);
+})
+      // .on('mouseout',myMouseoutrFunction)
+      .on('mouseout', function(d, i) {
+  tip.hide(d, i);
+  myMouseoutrFunction(d, i);
+})
+
+  // this function will be run everytime we mouse over an element
+      var myMouseoverFunctionkorea = function() {
+        // remember how d3 goes through EACH of the selected elements and uses your function for EACH element?
+        // well, everytime the function is used for an element, it has a "secret" variable called 'this' which holds that element.
+        // we use 'this' to increment the current element's radius by 10
+        var circle = d3.select(this);
+        d3.selectAll("rect").style("opacity", .2)
+        d3.selectAll(".SouthKorea").style("opacity", 1)
+        d3.selectAll(".legend").style("opacity", 1)
+        
+      }
+
+      
+      state.select(".SouthKorea")
+      .on('mouseover', function(d, i) {
+  tip.show(d, i);
+  myMouseoverFunctionkorea(d, i);
+})
+      // .on('mouseout',myMouseoutrFunction)
+      .on('mouseout', function(d, i) {
+  tip.hide(d, i);
+ myMouseoutrFunction(d, i);
+})
+
+  // this function will be run everytime we mouse over an element
+      var myMouseoverFunctionphil = function() {
+        var circle = d3.select(this);
+        d3.selectAll("rect").style("opacity", .2)
+        d3.selectAll(".Philippines").style("opacity", 1)
+        d3.selectAll(".legend").style("opacity", 1)
+        
+      }
+
+      state.select(".Philippines")
+      .on('mouseover', function(d, i) {
+  tip.show(d, i);
+  myMouseoverFunctionphil(d, i);
+})
+      // .on('mouseout',myMouseoutrFunction)
+      .on('mouseout', function(d, i) {
+  tip.hide(d, i);
+  myMouseoutrFunction(d, i);
+})
+});
+
+// stack bar chart
+var margin2 = {top: 20, right: -10, bottom: 100, left: 40},
+    width2 = 800 - margin2.left - margin2.right,
+    height2 = 400 - margin2.top - margin2.bottom;
+
+var x2 = d3.scale.ordinal()
+    .rangeRoundBands([0, width2], .2);
+
+var y2 = d3.scale.linear()
+//     .rangeRound([height, 0]);
+.range([height2, 0]);
+
+var color = d3.scale.ordinal()
+    .range(["#d0743c","#a05d56","#6b486b","#7b6888","#8a89a6","#98abc5",]);
+
+
+
+var xAxis2 = d3.svg.axis()
+    .scale(x2)
+    .orient("bottom");
+
+var yAxis2 = d3.svg.axis()
+    .scale(y2)
+    .orient("left")
+    .tickFormat(d3.format(".2s"));
+
+
+var tip2 = d3.tip()
+  .attr('class', 'd3-tip2')
+  .offset([35, 45])
+  .html(function(d) {
+    return  "<span style='color: #9B843E; font-family: helvetica' >" + d.name + ": " + (d.y1-d.y0) +"</span>";
+
+  })
+
+
+var svg2 = d3.select("#second").append("svg")
+    .attr("width", width2 + margin2.left + margin2.right)
+    .attr("height", height2 + margin2.top + margin2.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+
+
+svg2.call(tip2);
+
+
+d3.csv("data.csv", function(error, data) {
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Sector"; }));
+
+  data.forEach(function(d) {
+    var y0 = 0;
+    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
+    d.total = d.ages[d.ages.length - 1].y1;
+  });
+
+  data.sort(function(a, b) { return b.total - a.total; });
+
+  // console.log("data", data);
+
+  x2.domain(data.map(function(d) { return d.Sector; }));
+  y2.domain([0, d3.max(data, function(d) { return d.total; })]);
+
+  svg2.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height2 + ")")
+      .call(xAxis2)
+      .selectAll("text")  
+     .style("text-anchor", "end")
+     .attr("x", '-2em')
+     .attr("y", ".15em")
+     .attr("transform", function(d) {
+         return "rotate(-65)" 
+     });
+
+  svg2.append("g")
+      .attr("class", "y axis")
+      .call(yAxis2)
+      .selectAll('text')
+      .attr("dy", ".15em")
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Certified Application");
+
+  var Sector = svg2.selectAll(".Sector")
+      .data(data)
+      .enter().append("g")
+      .attr("class", "barcharts")
+      .attr("transform", function(d) { return "translate(" + x2(d.Sector) + ",0)"; });
+
+  Sector.selectAll("rect")
+      .data(function(d) { return d.ages; })
+      .enter().append("rect")
+      .attr("class", "bar2")
+      .attr("width", x2.rangeBand())
+      .attr("y", function(d) { return y2(d.y1); })
+      .attr("height", function(d) { return y2(d.y0) - y2(d.y1); })
+      .style("fill", function(d) { return color(d.name); })
+      .on('mouseover', tip2.show)
+      .on('mouseout', tip2.hide)
+
+  var legend2 = svg2.selectAll(".legend2")
+      .data(color.domain().slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend2")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend2.append("rect")
+      .attr("x", width2 - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend2.append("text")
+      .attr("x", width2 - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+
+});
+
+
+// button
+var bt1=document.getElementById('button2014');
+bt1.onclick = function(){
+  $('.barcharts').hide();
+  $('.tick').hide();
+  
+ d3.csv("data2014.csv", function(error, data) {
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Sector"; }));
+
+  data.forEach(function(d) {
+    var y0 = 0;
+    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
+    d.total = d.ages[d.ages.length - 1].y1;
+  });
+
+  data.sort(function(a, b) { return b.total - a.total; });
+
+  // console.log("data", data);
+
+  x2.domain(data.map(function(d) { return d.Sector; }));
+  y2.domain([0, d3.max(data, function(d) { return d.total; })]);
+
+  svg2.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height2 + ")")
+      .call(xAxis2)
+      .selectAll("text")  
+     .style("text-anchor", "end")
+     .attr("x", '-2em')
+     .attr("y", ".15em")
+     .attr("transform", function(d) {
+         return "rotate(-65)" 
+     });
+
+  svg2.append("g")
+      .attr("class", "y axis")
+      .call(yAxis2)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Certified Application");
+
+  var Sector = svg2.selectAll(".Sector")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "g")
+      .attr("transform", function(d) { return "translate(" + x2(d.Sector) + ",0)"; });
+
+  Sector.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("width", x2.rangeBand())
+      .attr("y", function(d) { return y2(d.y1); })
+      .attr("height", function(d) { return y2(d.y0) - y2(d.y1); })
+      .style("fill", function(d) { return color(d.name); })
+      .on('mouseover', tip2.show)
+      .on('mouseout', tip2.hide)
+
+  var legend2 = svg2.selectAll(".legend")
+      .data(color.domain().slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend2.append("rect")
+      .attr("x", width2 - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend2.append("text")
+      .attr("x", width2 - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+
+});
+}
+
+var bt2=document.getElementById('button2013');
+bt2.onclick = function(){
+  $('.barcharts').hide();
+  $('.tick').hide();
+  
+ d3.csv("data2013.csv", function(error, data) {
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Sector"; }));
+
+  data.forEach(function(d) {
+    var y0 = 0;
+    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
+    d.total = d.ages[d.ages.length - 1].y1;
+  });
+
+  data.sort(function(a, b) { return b.total - a.total; });
+
+  // console.log("data", data);
+
+  x2.domain(data.map(function(d) { return d.Sector; }));
+  y2.domain([0, d3.max(data, function(d) { return d.total; })]);
+
+  svg2.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height2 + ")")
+      .call(xAxis2)
+      .selectAll("text")  
+     .style("text-anchor", "end")
+     .attr("x", '-2em')
+     .attr("y", ".15em")
+     .attr("transform", function(d) {
+         return "rotate(-65)" 
+     });
+
+  svg2.append("g")
+      .attr("class", "y axis")
+      .call(yAxis2)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Certified Application");
+
+  var Sector = svg2.selectAll(".Sector")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "g")
+      .attr("transform", function(d) { return "translate(" + x2(d.Sector) + ",0)"; });
+
+  Sector.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("width", x2.rangeBand())
+      .attr("y", function(d) { return y2(d.y1); })
+      .attr("height", function(d) { return y2(d.y0) - y2(d.y1); })
+      .style("fill", function(d) { return color(d.name); })
+      .on('mouseover', tip2.show)
+      .on('mouseout', tip2.hide)
+
+  var legend2 = svg2.selectAll(".legend")
+      .data(color.domain().slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend2.append("rect")
+      .attr("x", width2 - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend2.append("text")
+      .attr("x", width2 - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+
+});
+}
+var bt3=document.getElementById('button2012');
+bt3.onclick = function(){
+  $('.barcharts').hide();
+  $('.tick').hide();
+  
+ d3.csv("data2012.csv", function(error, data) {
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Sector"; }));
+
+  data.forEach(function(d) {
+    var y0 = 0;
+    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
+    d.total = d.ages[d.ages.length - 1].y1;
+  });
+
+  data.sort(function(a, b) { return b.total - a.total; });
+
+  // console.log("data", data);
+
+  x2.domain(data.map(function(d) { return d.Sector; }));
+  y2.domain([0, d3.max(data, function(d) { return d.total; })]);
+
+  svg2.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height2 + ")")
+      .call(xAxis2)
+      .selectAll("text")  
+     .style("text-anchor", "end")
+     .attr("x", '-2em')
+     .attr("y", ".15em")
+     .attr("transform", function(d) {
+         return "rotate(-65)" 
+     });
+
+  svg2.append("g")
+      .attr("class", "y axis")
+      .call(yAxis2)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Certified Application");
+
+  var Sector = svg2.selectAll(".Sector")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "g")
+      .attr("transform", function(d) { return "translate(" + x2(d.Sector) + ",0)"; });
+
+  Sector.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("width", x2.rangeBand())
+      .attr("y", function(d) { return y2(d.y1); })
+      .attr("height", function(d) { return y2(d.y0) - y2(d.y1); })
+      .style("fill", function(d) { return color(d.name); })
+      .on('mouseover', tip2.show)
+      .on('mouseout', tip2.hide)
+
+  var legend2 = svg2.selectAll(".legend")
+      .data(color.domain().slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend2.append("rect")
+      .attr("x", width2 - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend2.append("text")
+      .attr("x", width2 - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+
+});
+}
+var bt4=document.getElementById('button2011');
+bt4.onclick = function(){
+  $('.barcharts').hide();
+  $('.tick').hide();
+  
+ d3.csv("data2011.csv", function(error, data) {
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Sector"; }));
+
+  data.forEach(function(d) {
+    var y0 = 0;
+    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
+    d.total = d.ages[d.ages.length - 1].y1;
+  });
+
+  data.sort(function(a, b) { return b.total - a.total; });
+
+  // console.log("data", data);
+
+  x2.domain(data.map(function(d) { return d.Sector; }));
+  y2.domain([0, d3.max(data, function(d) { return d.total; })]);
+
+  svg2.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height2 + ")")
+      .call(xAxis2)
+      .selectAll("text")  
+     .style("text-anchor", "end")
+     .attr("x", '-2em')
+     .attr("y", ".15em")
+     .attr("transform", function(d) {
+         return "rotate(-65)" 
+     });
+
+  svg2.append("g")
+      .attr("class", "y axis")
+      .call(yAxis2)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Certified Application");
+
+  var Sector = svg2.selectAll(".Sector")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "g")
+      .attr("transform", function(d) { return "translate(" + x2(d.Sector) + ",0)"; });
+
+  Sector.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("width", x2.rangeBand())
+      .attr("y", function(d) { return y2(d.y1); })
+      .attr("height", function(d) { return y2(d.y0) - y2(d.y1); })
+      .style("fill", function(d) { return color(d.name); })
+      .on('mouseover', tip2.show)
+      .on('mouseout', tip2.hide)
+
+  var legend2 = svg2.selectAll(".legend")
+      .data(color.domain().slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend2.append("rect")
+      .attr("x", width2 - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend2.append("text")
+      .attr("x", width2 - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+
+});
+}
+
+var bt5=document.getElementById('button2010');
+bt5.onclick = function(){
+  $('.barcharts').hide();
+  $('.tick').hide();
+  
+ d3.csv("data2010.csv", function(error, data) {
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Sector"; }));
+
+  data.forEach(function(d) {
+    var y0 = 0;
+    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
+    d.total = d.ages[d.ages.length - 1].y1;
+  });
+
+  data.sort(function(a, b) { return b.total - a.total; });
+
+  // console.log("data", data);
+
+  x2.domain(data.map(function(d) { return d.Sector; }));
+  y2.domain([0, d3.max(data, function(d) { return d.total; })]);
+
+  svg2.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height2 + ")")
+      .call(xAxis2)
+      .selectAll("text")  
+     .style("text-anchor", "end")
+     .attr("x", '-2em')
+     .attr("y", ".15em")
+     .attr("transform", function(d) {
+         return "rotate(-65)" 
+     });
+
+  svg2.append("g")
+      .attr("class", "y axis")
+      .call(yAxis2)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Certified Application")
+      .attr('class',"certified");
+
+  var Sector = svg2.selectAll(".Sector")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "g")
+      .attr("transform", function(d) { return "translate(" + x2(d.Sector) + ",0)"; });
+
+  Sector.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("width", x2.rangeBand())
+      .attr("y", function(d) { return y2(d.y1); })
+      .attr("height", function(d) { return y2(d.y0) - y2(d.y1); })
+      .style("fill", function(d) { return color(d.name); })
+      .on('mouseover', tip2.show)
+      .on('mouseout', tip2.hide)
+
+  var legend2 = svg2.selectAll(".legend")
+      .data(color.domain().slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend2.append("rect")
+      .attr("x", width2 - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend2.append("text")
+      .attr("x", width2 - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+
+});
+}
+
+var bt6=document.getElementById('button2010-2014');
+bt6.onclick = function(){
+  $('.barcharts').hide();
+  $('.tick').hide();
+  
+ d3.csv("data.csv", function(error, data) {
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Sector"; }));
+
+  data.forEach(function(d) {
+    var y0 = 0;
+    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
+    d.total = d.ages[d.ages.length - 1].y1;
+  });
+
+  data.sort(function(a, b) { return b.total - a.total; });
+
+  // console.log("data", data);
+
+  x2.domain(data.map(function(d) { return d.Sector; }));
+  y2.domain([0, d3.max(data, function(d) { return d.total; })]);
+
+  svg2.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height2 + ")")
+      .call(xAxis2)
+      .selectAll("text")  
+     .style("text-anchor", "end")
+     .attr("x", '-2em')
+     .attr("y", ".15em")
+     .attr("transform", function(d) {
+         return "rotate(-65)" 
+     });
+
+  svg2.append("g")
+      .attr("class", "y axis")
+      .call(yAxis2)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Certified Application");
+
+  var Sector = svg2.selectAll(".Sector")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "g")
+      .attr("transform", function(d) { return "translate(" + x2(d.Sector) + ",0)"; });
+
+  Sector.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("width", x2.rangeBand())
+      .attr("y", function(d) { return y2(d.y1); })
+      .attr("height", function(d) { return y2(d.y0) - y2(d.y1); })
+      .style("fill", function(d) { return color(d.name); })
+      .on('mouseover', tip2.show)
+      .on('mouseout', tip2.hide)
+
+  var legend2 = svg2.selectAll(".legend")
+      .data(color.domain().slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend2.append("rect")
+      .attr("x", width2 - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend2.append("text")
+      .attr("x", width2 - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+
+});
+}
+
+
+
+</script>
+
+
+
+
+<p>　　According to DOL, the applications fall into 17 economic sectors. Indian dominate most of them. In 2010, Indian got most certifications in 12 sectors. In 2014, the number rises to 14 except Agribusiness (South Korea), Geospatial (China) and Hospitality (Mexico).<br><br>
+
+“A better English background plays a role”, Vidya said. The education system in India has much in common with British education system. English is popular in education and everyday life in India. Therefore, Indian people are more comfortable communicating in English and may do better in the job interviews. “Maybe Indian accent is more easy to understand for American people”, Vidya said, “Their English background and their strong professional skills make Indian strong candidates.”<br><br>
+
+However, even for the Indian, it is not easy to get the certification because of the long process and strict review. Lately, supervise recruitment and audits make it worse. It often takes an employer 3 to 4 months to place ads in the newspaper and on the Internet, receive resumes and interview people before they file the Perm program. It also takes months for DOL to reach the case and audits. And this process could run all over again before the case is finally certified. <br><br>
+
+Time frame is always a problem, according to Vidya. Many Indian just go back to India or find jobs in other countries such as China and Singapore. “It depends on the job, where you get a good job”, Vidya said.<br><br>
+</p>
+
+  
+
+</script>
+</body>
